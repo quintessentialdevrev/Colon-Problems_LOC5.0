@@ -10,15 +10,15 @@ app = Flask(__name__)
 CORS(app)
 
 model = pickle.load(open('C:/complete web development/Colon-Problems_LOC5.0/backend/model/model.pkl', 'rb'))
-df = pd.read_excel('photography.xlsx')
-app.config['CORS_HEADERS'] = 'Content-Type'
+df = pd.read_excel('backend\photography.xlsx')
+# app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/")
 def home():
     return "<h1>Server is live</h1>"
 
 @app.route('/predict',methods=['POST'])
-# @crossdomain(origin='*')
+#@crossdomain(origin='*')
 def predict():
     print('hello')
     try:
@@ -31,6 +31,7 @@ def predict():
     close_match =  difflib.get_close_matches(request_data['quote'], df['Description'].tolist())
     # print(close_match)
     close = close_match[0]
+    print(close)
     id_of_quote = df[df['Description'] == close]['Description'].values[0]
     similarity_score = list(enumerate(model[id_of_quote]))
     # print(similarity_score)
@@ -43,7 +44,7 @@ def predict():
             continue
         id = k[0]
         try:
-            quote_from_id = df[df['index'] == int(id)]['name'].values[0]
+            quote_from_id = df[df['index'] == int(id)]['Name'].values[0]
             print(quote_from_id)
             if(i == 6):
                 break
@@ -53,7 +54,7 @@ def predict():
             pass
         # except:
         #     pass
-    #print(return_list)
+    print(return_list)
     print("jsonify")
     #print(jsonify(return_list))
 

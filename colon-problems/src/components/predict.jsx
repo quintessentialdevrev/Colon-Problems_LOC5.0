@@ -10,7 +10,7 @@ var sectionStyle = {
 
 export default function Predict() {
     const [values, setValues] = useState(
-        {quote: ''}
+        {'quote': ''}
     )
     const [predict, setPredict] = useState([])
 
@@ -22,10 +22,11 @@ export default function Predict() {
                 console.log(values)
                 let res = await fetch("http://127.0.0.1:5000/predict", {
                     method: "POST",
-                    mode: "no-cors",
+                    //mode: "no-cors",
                     headers: {
-                        Accept: "application/json, text/plain, /",
-                    'Content-type': 'application/json; charset=UTF-8',
+                       // 'Content-type': 'application/json; charset=UTF-8'
+                    Accept: "application/json, text/plain, /",
+                    'Content-Type': 'application/json',
                     },
                     body: JSON.stringify(
                            values
@@ -33,16 +34,15 @@ export default function Predict() {
                 });
                 let resJson = await res.json()
                 console.log(resJson)
-                //if(res.status === 200 || 400){
-                    // setValues({
-                    //     magnitude: 0,
-                    //     velocity: 0
-                    // });
-                    console.log("fetched Successfully")
-                //}
-                //else{
-                //alert('some error occured')
-                // }
+                if(res.status === 200 || 400){
+                    setValues({
+                        quote: 'underwater,sea,water body',
+                    });
+                   
+                }
+                else{
+                alert('some error occured')
+                }
             // console.log(res.values)
             setPredict(resJson)
             // //setPredict(parseFloat(resJson['predict'].toFixed(4)))
@@ -57,7 +57,7 @@ export default function Predict() {
         <>
         {/* <img src={PredictImg} style={{width:1600,}} alt="prediction"></img> */}
         <body className="bg-dark" style={sectionStyle}>
-        <Container className="d-flex align-items-center justify-content-center" style={{minHeight: '100vh'}} style={sectionStyle}>
+        <Container className="d-flex align-items-center justify-content-center" >
         <div className='w-100' style={{maxWidth: '400px'}}>
         <Card className="bg-light">
             <Card.Body>
