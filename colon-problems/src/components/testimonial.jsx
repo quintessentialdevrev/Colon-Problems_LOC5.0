@@ -65,6 +65,7 @@ import {
         justifyContent={'space-between'}
         position={'relative'}
         bg={useColorModeValue('white', 'gray.800')}
+        backgroundColor='purple.400'
         _after={{
           content: '""',
           position: 'absolute',
