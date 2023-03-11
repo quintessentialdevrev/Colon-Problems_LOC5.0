@@ -8,6 +8,8 @@ import Loading from './components/Loading/Loading';
 import Home from './components/Home/Home';
 import Store from './store';
 import StockImages from './components/stock_imgs/stock_images';
+import Predict from './components/predict';
+import Events from './components/Events/Events';
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
           <Route path="/home" element={<Home/>}/>
           <Route path="/store" element={<Store name={'Your Company Name'} description={'Item that you sold'} amount={350}/>}/>
           <Route path="/stockimages" element={<StockImages/>}/>
+          <Route path="/predict" element={<Predict/>}/>
+          <Route path="/Events" element={<Events/>}/>
         </Routes>
       </Router>
     </ChakraProvider>

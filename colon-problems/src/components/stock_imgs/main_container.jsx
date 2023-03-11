@@ -1,6 +1,7 @@
 import React from 'react'
 import Data from "./image_data";
 import './maincontainer.css';
+import Pin from './Pin';
 
 export default function Main_container() {
   return (
@@ -15,6 +16,18 @@ export default function Main_container() {
               alt=""
             /> */}
           </div>
+        </div>
+        <div className="mainContainer">
+          {Data &&
+            Data.map((data) => (
+              <Pin
+                key={data.id}
+                pinSize={data.size}
+                imgSrc={data.imgSrc}
+                name={data.name}
+                link={data.link}
+              />
+            ))}
         </div>
       </main>
         </div>
