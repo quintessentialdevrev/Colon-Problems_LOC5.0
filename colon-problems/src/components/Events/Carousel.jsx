@@ -12,7 +12,7 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
-import c1 from './c1.png';
+// import c1 from './c1.png';
 
 // Settings for the slider
 const settings = {
@@ -42,25 +42,25 @@ export default function Carousel() {
 
   const cards = [
     {
-      title: 'Design Projects 1',
+      title: 'CAPTURING MOMEMTS',
       text:
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
-        {c1},
+       "https://media.istockphoto.com/id/1283139794/photo/beautiful-purple-flowers-in-bloom.jpg?s=612x612&w=0&k=20&c=gvwe-qazAn_BMQZvUG1o5zk_x7YufGX5Y2SJnX094Kw=",
     },
     {
-      title: 'Design Projects 2',
+      title: 'PICTURE THIS',
       text:
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
-        'https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80',
+        'https://media.istockphoto.com/id/941005950/photo/violet-lavender-field.jpg?b=1&s=170667a&w=0&k=20&c=hGy0kRqTvFsCHzbegAwjBvO8gos6gNXBthcGCYNil4M=',
     },
     {
-      title: 'Design Projects 3',
+      title: 'PICTURE PERFECT',
       text:
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
-        'https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+        'https://media.istockphoto.com/id/1026788256/photo/purple-chrysanthemums-beautiful-flowers-selective-soft-focus-shallow-depth-of-field-toned.jpg?s=612x612&w=0&k=20&c=F9rciOtC3yFgUKNefwXP1ORR--dLRZYBzx9Zgo1C8yA=',
     },
   ];
 
@@ -111,10 +111,13 @@ export default function Carousel() {
         {cards.map((card, index) => (
           <Box
             key={index}
-            height={'6xl'}
+            height={'700'}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
+            width={'200'}
+            
+
             backgroundSize="2000px"
             backgroundImage={`${card.image}`}>
             {/* This is the block you need to change, to customize the caption */}
@@ -129,7 +132,7 @@ export default function Carousel() {
                 <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="GrayText">
+                <Text fontSize={{ base: 'md', lg: 'lg' }} color="WhiteTexT">
                   {card.text}
                 </Text>
               </Stack>
