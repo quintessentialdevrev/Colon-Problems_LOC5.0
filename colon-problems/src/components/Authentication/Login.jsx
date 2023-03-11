@@ -14,8 +14,26 @@ import {
   } from '@chakra-ui/react';
   //import bg from './images/img3.png'
 
+  import { useNavigate } from 'react-router-dom'
+  import{signInWithEmailAndPassword} from 'firebase/auth'
+  import {useRef, useState} from 'react'
+  import {auth} from '../firebase'
+
   
   export default function Login() {
+    const navigate = useNavigate()
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const [errorMsg, setErrorMsg]= useState('')
+    const handleSubmission = () => {
+
+      signInWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value).then(()=>{
+          navigate('/home')
+      }).catch((err)=> {
+          setErrorMsg(err.message)
+          console.log("Error - ", err.message)
+  })
+  }
     return (
       <Flex
     //   backgroundImage={
@@ -45,11 +63,11 @@ import {
             <Stack spacing={4}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input type="email" ref={emailRef}/>
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password" />
+                <Input type="password" ref={passwordRef}/>
               </FormControl>
               <Stack spacing={10}>
                 <Stack
@@ -64,7 +82,8 @@ import {
                   color={'white'}
                   _hover={{
                     bg: 'blue.500',
-                  }}>
+                  }}
+                  onClick={handleSubmission}>
                   Sign in
                 </Button>
               </Stack>
