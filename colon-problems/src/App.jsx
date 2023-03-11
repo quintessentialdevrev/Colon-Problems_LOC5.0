@@ -6,6 +6,8 @@ import Login from './components/Authentication/Login'
 import Signup from './components/Authentication/Signup'
 import Loading from './components/Loading/Loading';
 import Home from './components/Home/Home';
+import Predict from './components/predict';
+import Events from './components/Events/Events';
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/loading" element={<Loading/>}/>
           <Route path="/home" element={<Home/>}/>
+          <Route path="/predict" element={<Predict/>}/>
+          <Route path="/Events" element={<Events/>}/>
         </Routes>
       </Router>
             
