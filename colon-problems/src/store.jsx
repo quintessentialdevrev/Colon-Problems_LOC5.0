@@ -17,6 +17,7 @@ import {
     ListItem,
   } from '@chakra-ui/react';
   import React from 'react'
+  import './store.css';
   import axios from 'axios';
   import StripeCheckout from 'react-stripe-checkout';
 
@@ -55,9 +56,9 @@ const onToken = (amount, description) => token =>
   backgroundPosition="center"
   backgroundRepeat="no-repeat"
 />
-        <Heading>Aspiring to become a Proffesional Photographer ?</Heading>
+        <Heading className='c1'>Aspiring to become a Proffesional Photographer ?</Heading>
         <br />
-        <Heading>Join us as we lead you through this adventure !</Heading>
+        <Heading className='c1'>Join us as we lead you through this adventure !</Heading>
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 8, md: 10 }}
@@ -224,7 +225,6 @@ const onToken = (amount, description) => token =>
               email
               allowRememberMe
             />
-  
             <Stack direction="row" alignItems="center" justifyContent={'center'}>
               <Text as="i">Go from zero to hero</Text>
             </Stack>
