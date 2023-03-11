@@ -99,7 +99,8 @@ import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
                   color={'white'}
                   _hover={{
                     bg: 'blue.500',
-                  }}>
+                  }}
+                  onClick={handleSubmission}>
                   Sign up
                 </Button>
               </Stack>
