@@ -1,0 +1,11 @@
+.flexcontainer{
+    padding-left: 20vh;
+    padding-top: 5vh;
+}
+.tagline{
+    display: flex;
+    font-size: 72px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
