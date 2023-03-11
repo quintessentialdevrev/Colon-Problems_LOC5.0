@@ -2,9 +2,10 @@ import React from 'react'
 import Data from "./image_data";
 import './maincontainer.css';
 import Pin from './Pin';
-import { Search2Icon } from '@chakra-ui/icons';
+import { Search2Icon, AddIcon } from '@chakra-ui/icons';
 import Navbar from '../Navbar/Navbar'
 import AnimatedPage from '../Animate/Animate';
+import Footer from '../Footer';
 
 export default function Main_container() {
   return (
@@ -15,11 +16,19 @@ export default function Main_container() {
 
         <div className="main">
         <main>
+        <div className = "ghanta">
         <div className="searchBox">
           <input type="text" placeholder="Search" />
           <div className="search">
             <Search2Icon/>
           </div>
+        </div>
+        <div className="searchBox">
+        <button type="button">Upload Images</button>
+          <div className="search">
+            <AddIcon/>
+          </div>
+        </div>
         </div>
         <div className="mainContainer">
           {Data &&
@@ -38,6 +47,7 @@ export default function Main_container() {
     </div>
 
     </AnimatedPage>
+    <Footer/>
     </>
     
   );
