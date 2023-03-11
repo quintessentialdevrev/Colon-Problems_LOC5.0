@@ -6,6 +6,7 @@ import Login from './components/Authentication/Login'
 import Signup from './components/Authentication/Signup'
 import Loading from './components/Loading/Loading';
 import Home from './components/Home/Home';
+import StockImages from './components/stock_imgs/stock_images';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/loading" element={<Loading/>}/>
           <Route path="/home" element={<Home/>}/>
+          <Route path="/stockimages" element={<StockImages/>}/>
         </Routes>
       </Router>
             
