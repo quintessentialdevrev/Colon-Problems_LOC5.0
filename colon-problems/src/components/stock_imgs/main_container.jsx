@@ -3,10 +3,16 @@ import Data from "./image_data";
 import './maincontainer.css';
 import Pin from './Pin';
 import { Search2Icon } from '@chakra-ui/icons';
+import Navbar from '../Navbar/Navbar'
+import AnimatedPage from '../Animate/Animate';
 
 export default function Main_container() {
   return (
-    <div className='main_container'>
+    <>
+    <Navbar/>
+    <AnimatedPage>
+      <div className='main_container'>
+
         <div className="main">
         <main>
         <div className="searchBox">
@@ -30,5 +36,9 @@ export default function Main_container() {
       </main>
         </div>
     </div>
+
+    </AnimatedPage>
+    </>
+    
   );
 }
