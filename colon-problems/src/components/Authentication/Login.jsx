@@ -12,18 +12,18 @@ import {
     Text,
     useColorModeValue,
   } from '@chakra-ui/react';
-  import bg from './images/img3.png'
+  //import bg from './images/img3.png'
 
   
-  export default function SimpleCard() {
+  export default function Login() {
     return (
       <Flex
     //   backgroundImage={
     //     'url(https://images.unsplash.com/photo-1676675356577-ccdb5bec1f0f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg2fGlVSXNuVnRqQjBZfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60)'
     //   }
-    backgroundImage={
-      bg
-    }
+    // backgroundImage={
+    //   bg
+    // }
         backgroundSize={'cover'}
         minH={'100vh'}
         align={'center'}

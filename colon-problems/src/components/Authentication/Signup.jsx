@@ -14,11 +14,36 @@ import {
     useColorModeValue,
     Link,
   } from '@chakra-ui/react';
-  import { useState } from 'react';
-  import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { useState } from 'react';
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom'
+import {auth} from '../firebase'
+import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
   
-  export default function SignupCard() {
+  export default function Signup() {
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate()
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const nameRef = useRef()
+    const [errorMsg, setErrorMsg]= useState('')
+    const handleSubmission = () => {
+      // console.log(emailRef.current.value)
+
+      createUserWithEmailAndPassword(auth, emailRef.current.value, passwordRef.current.value).then(async(res)=>{
+          const user = res.user
+          await updateProfile(user, {
+              displayName: nameRef.current.value,
+          });
+          console.log(user)
+          navigate('/home')
+      }).catch((err)=> {
+          setErrorMsg(err.message)
+          console.log("Error - ", err.message)
+  
+  })
+  }
   
     return (
       <Flex
@@ -41,28 +66,20 @@ import {
             boxShadow={'lg'}
             p={8}>
             <Stack spacing={4}>
-              <HStack>
                 <Box>
-                  <FormControl id="firstName" isRequired>
-                    <FormLabel>First Name</FormLabel>
-                    <Input type="text" />
+                  <FormControl id="Name" isRequired>
+                    <FormLabel>Name</FormLabel>
+                    <Input type="text" ref={nameRef}/>
                   </FormControl>
                 </Box>
-                <Box>
-                  <FormControl id="lastName">
-                    <FormLabel>Last Name</FormLabel>
-                    <Input type="text" />
-                  </FormControl>
-                </Box>
-              </HStack>
               <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input type="email" ref={emailRef}/>
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
-                  <Input type={showPassword ? 'text' : 'password'} />
+                  <Input type={showPassword ? 'text' : 'password'} ref={passwordRef}/>
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
@@ -88,7 +105,7 @@ import {
               </Stack>
               <Stack pt={6}>
                 <Text align={'center'}>
-                  Already a user? <Link color={'blue.400'}>Login</Link>
+                  Already a user? <Link color={'blue.400'} href = "\login">Login</Link>
                 </Text>
               </Stack>
             </Stack>
