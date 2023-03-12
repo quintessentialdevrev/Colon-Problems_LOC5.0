@@ -8,6 +8,7 @@ import {
   Center,
   useColorModeValue,
   HStack,
+  Link,
 } from '@chakra-ui/react';
 import { BsArrowUpRight, BsHeartFill, BsHeart } from 'react-icons/bs';
 import { NavLink } from 'react-bootstrap';
@@ -79,8 +80,8 @@ export default function PostWithLike() {
               cursor={'pointer'}
               w="full">
               <Text fontSize={'md'} fontWeight={'semibold'}>
-                View more
-              </Text>
+              <a href="/store">View more 123</a> 
+=              </Text>
               <BsArrowUpRight />
             </Flex>
             <Flex

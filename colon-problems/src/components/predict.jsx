@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {Card, Form, Button, Container, FormCheck} from 'react-bootstrap'
+import Navbar from "./Navbar/Navbar";
 // import PredictImg from '../images/map1.jpg'
 
 
@@ -55,6 +56,7 @@ export default function Predict() {
     }
     return(
         <>
+        <Navbar/>
         {/* <img src={PredictImg} style={{width:1600,}} alt="prediction"></img> */}
         <body className="bg-dark" style={sectionStyle}>
         <Container className="d-flex align-items-center justify-content-center" >

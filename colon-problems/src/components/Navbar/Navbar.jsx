@@ -256,7 +256,7 @@ import {
       href:'/Events'
       // children: [
       //   {
-      //     label: 'Explore Design Work',
+      //     label: '',
       //     subLabel: 'Trending Design to inspire you',
       //     href: '#',
       //   },
@@ -291,5 +291,15 @@ import {
       label: 'Hire Photographers',
       href: './predict',
     },
-   
+    {
+      label: 'View Profiles',
+      href: './profile',
+    },
+    {
+      label: 'Playground',
+      href: './playground',
+    },
+
+
+
   ];
