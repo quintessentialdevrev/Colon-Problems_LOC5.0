@@ -13,6 +13,7 @@ import Events from './components/Events/Events';
 import Model from '../model';
 import PostWithLike from './components/Courses';
 import Profile from './components/Profile/profile';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
