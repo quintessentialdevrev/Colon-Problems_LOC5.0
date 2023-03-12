@@ -47,6 +47,7 @@ export default function Carousel() {
         "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
       image:
        "https://media.istockphoto.com/id/1283139794/photo/beautiful-purple-flowers-in-bloom.jpg?s=612x612&w=0&k=20&c=gvwe-qazAn_BMQZvUG1o5zk_x7YufGX5Y2SJnX094Kw=",
+
     },
     {
       title: 'PICTURE THIS',

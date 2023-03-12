@@ -12,7 +12,7 @@ export default function Events() {
       <Navbar/>
       <Carousel/>
       <div className="tagline">
-          Lorem Ipsum!
+          Explore our Events!
         </div>
       <Flex className='mainpage'>
       <div className="flexcontainer">

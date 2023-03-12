@@ -56,9 +56,6 @@ const onToken = (amount, description) => token =>
   backgroundPosition="center"
   backgroundRepeat="no-repeat"
 />
-        <Heading className='c1'>Aspiring to become a Proffesional Photographer ?</Heading>
-        <br />
-        <Heading className='c1'>Join us as we lead you through this adventure !</Heading>
         <SimpleGrid
           columns={{ base: 1, lg: 2 }}
           spacing={{ base: 8, md: 10 }}

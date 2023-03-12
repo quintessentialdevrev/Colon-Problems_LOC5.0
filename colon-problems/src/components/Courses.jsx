@@ -11,16 +11,18 @@ import {
   Link,
 } from '@chakra-ui/react';
 import { BsArrowUpRight, BsHeartFill, BsHeart } from 'react-icons/bs';
+import Navbar from './Navbar/Navbar';
+import Footer from './Footer';
+import Store from '../store';
 
 
 
-
-export default function PostWithLike() {
+export default function Courses() {
   const [liked, setLiked] = useState(false);
 
   return (
     <>
-
+      <Navbar/>
       <div>
         <h1 style={{textAlign:'center'}}>COURSES</h1>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius distinctio possimus aliquam, molestias quam deserunt esse ullam animi. Doloremque, illum sequi? Ad repellendus ipsa nemo voluptatibus inventore magni. Incidunt, fugiat.
@@ -223,9 +225,6 @@ export default function PostWithLike() {
 
       </Center>
       <Footer/>
-
-
-
     </>
 
   );

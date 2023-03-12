@@ -11,7 +11,7 @@ import StockImages from './components/stock_imgs/stock_images';
 import Predict from './components/predict';
 import Events from './components/Events/Events';
 import Model from '../model';
-import Course_main from './components/course_main';
+import PostWithLike from './components/Courses';
 import Profile from './components/Profile/profile';
 
 
@@ -28,9 +28,9 @@ function App() {
           <Route path="/store" element={<Store name={'Your Company Name'} description={'Item that you sold'} amount={350}/>}/>
           <Route path="/stockimages" element={<StockImages/>}/>
           <Route path="/predict" element={<Predict/>}/>
-          <Route path="/Events" element={<Events/>}/>
+          <Route path="/events" element={<Events/>}/>
           <Route path="/playground" element={<Model />}/>
-          <Route path="/courses" element={<Course_main/>}/>
+          <Route path="/courses" element={<PostWithLike/>}/>
           <Route path='/profile' element={<Profile/>}/>
           
         
