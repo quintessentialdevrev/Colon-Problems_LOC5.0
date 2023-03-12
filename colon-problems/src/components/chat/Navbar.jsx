@@ -3,7 +3,6 @@ import SignIn from './SignIn'
 import LogOut from './LogOut'
 import {auth} from '../firebase'
 import {useAuthState} from 'react-firebase-hooks/auth'
-import "C:/Users/Yash Thakar/PROGRAMMING/WebDev/React/Colon-Problems_LOC5.0/colon-problems/src/App.css"
 
 const style = {
     nav: `bg-gray-800 h-20 flex justify-between items-center p-4`,

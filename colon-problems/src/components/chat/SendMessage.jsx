@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {auth, db} from '../firebase'
 import {addDoc, collection, serverTimestamp} from 'firebase/firestore'
-import "C:/Users/Yash Thakar/PROGRAMMING/WebDev/React/Colon-Problems_LOC5.0/colon-problems/src/App.css"
 
 const style = {
   form: `h-14 w-full max-w-[728px]  flex text-xl absolute bottom-0`,

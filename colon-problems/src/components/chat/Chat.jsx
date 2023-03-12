@@ -3,7 +3,6 @@ import Message from './Message';
 import SendMessage from './SendMessage';
 import { db } from '../firebase';
 import { query, collection, orderBy, onSnapshot } from 'firebase/firestore';
-import "C:/Users/Yash Thakar/PROGRAMMING/WebDev/React/Colon-Problems_LOC5.0/colon-problems/src/App.css"
 
 const style = {
   appContainer: `max-w-[728px] mx-auto text-center`,
