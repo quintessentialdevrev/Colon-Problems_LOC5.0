@@ -21,6 +21,7 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+  import imgg from '../Images/pikone.png'
   
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
@@ -55,7 +56,7 @@ import {
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
-              Logo
+              <img src={imgg} style={{height:'35px'}}/>
             </Text>
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -68,14 +69,14 @@ import {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
-            <Button
+            {/* <Button
               as={'a'}
               fontSize={'sm'}
               fontWeight={400}
               variant={'link'}
               href={'#'}>
               Sign In
-            </Button>
+            </Button> */}
             <Button
               as={'a'}
               display={{ base: 'none', md: 'inline-flex' }}
@@ -83,11 +84,11 @@ import {
               fontWeight={600}
               color={'white'}
               bg={'purple.400'}
-              href={'#'}
+              href={'./signup'}
               _hover={{
                 bg: 'purple.300',
               }}>
-              Sign Up
+             Log Out
             </Button>
           </Stack>
         </Flex>

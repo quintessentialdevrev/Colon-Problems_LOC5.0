@@ -6,6 +6,9 @@ from flask_cors import CORS
 import random
 import difflib
 import json
+import cv2
+import imutils
+import urllib.request
 app = Flask(__name__)
 CORS(app)
 
@@ -64,7 +67,7 @@ def predict():
 
 @app.route('/predictSimilarity',methods=['POST'])
 #@crossdomain(origin='*')
-def predict():
+def predictSimilarity():
     print('hello')
     try:
         request_data = request.get_json()
@@ -74,12 +77,32 @@ def predict():
         print(er)
     print("data: ", request_data)
     
-    
+    req = urllib.request.urlopen(request_data["img1"])
+    arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
+    original = cv2.imdecode(arr, -1)
+
+    req = urllib.request.urlopen(request_data["img2"])
+    arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
+    new = cv2.imdecode(arr, -1)
+
+    # original = cv2.imread(request_data["img1"])
+    # new = cv2.imread(request_data["img2"])
+    # print(original)
+    # cv2.imshow("window_name", original)
+    # cv2.waitKey(0)
+    #resize the images to make them small in size. A bigger size image may take a significant time
+    #more computing power and time
+    original = imutils.resize(original, height = 600)
+    new = imutils.resize(new, height = 600)
+
+    z3 = sum(sum(cv2.absdiff(original, new)).flatten())
 
     print("jsonify")
     #print(jsonify(return_list))
 
-    return jsonify(return_list)
+    print(z3)
+
+    return {"data": str(z3)}
     #return json.dumps(return_list)
 
 if __name__ == "__main__":
