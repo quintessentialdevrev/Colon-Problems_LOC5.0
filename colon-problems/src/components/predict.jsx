@@ -60,10 +60,10 @@ export default function Predict() {
         {/* <img src={PredictImg} style={{width:1600,}} alt="prediction"></img> */}
         <body className="bg-dark" style={sectionStyle}>
         <Container className="d-flex align-items-center justify-content-center">
-        <div className='w-100' style={{maxWidth: '400px'}}>
+        <div className='w-100' style={{maxWidth: '400px',maxheight:'1500px'}}>
         <Card className="bg-light">
             <Card.Body>
-                <h2 className='text-center mb-4' style={{color:'white',backgroundColor:'blue',padding:5}}>Prediction</h2>
+                <h2 className='text-center mb-4' style={{color:'white',backgroundColor:'purple',padding:5}}>Prediction</h2>
                 <Form>
                    <Form.Check id = 'text'>
                         <Form.Label><b>Genre</b></Form.Label>
