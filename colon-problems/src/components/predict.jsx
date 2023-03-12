@@ -66,8 +66,10 @@ export default function Predict() {
                 <h2 className='text-center mb-4' style={{color:'white',backgroundColor:'blue',padding:5}}>Prediction</h2>
                 <Form>
                    <Form.Check id = 'text'>
-                        <Form.Label><b>Age</b></Form.Label>
+                        <Form.Label><b>Genre</b></Form.Label>
                         <Form.Control type = 'text' onChange={e => setValues((prev)=>({...prev, quote: e.target.value}))}required></Form.Control>
+                        <Form.Label><b>Description</b></Form.Label>
+                        <Form.Control type = 'textarea' rows={5} ></Form.Control>
                     </Form.Check> 
                    
                     <Button onClick={handleSubmit} type="button" className='w-100 mt-4 bg-success' style={{backgroundColor:'red'}}>Predict</Button>

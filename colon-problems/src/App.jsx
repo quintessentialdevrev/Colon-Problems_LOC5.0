@@ -13,6 +13,7 @@ import Events from './components/Events/Events';
 import Model from '../model';
 import Course_main from './components/course_main';
 import Profile from './components/Profile/profile';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
