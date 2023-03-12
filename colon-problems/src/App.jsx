@@ -11,7 +11,7 @@ import StockImages from './components/stock_imgs/stock_images';
 import Predict from './components/predict';
 import Events from './components/Events/Events';
 import Model from '../model';
-import Courses from './components/Courses';
+import Course_main from './components/course_main';
 import Profile from './components/Profile/profile';
 
 
@@ -21,7 +21,7 @@ function App() {
     <ChakraProvider>
     <Router>
         <Routes>
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/" element={<Login/>}/>
           <Route path="/signup" element={<Signup/>}/>
           <Route path="/loading" element={<Loading/>}/>
           <Route path="/home" element={<Home/>}/>
@@ -30,8 +30,9 @@ function App() {
           <Route path="/predict" element={<Predict/>}/>
           <Route path="/Events" element={<Events/>}/>
           <Route path="/playground" element={<Model />}/>
-          <Route path="/Courses" element={<Courses/>}/>
+          <Route path="/courses" element={<Course_main/>}/>
           <Route path='/profile' element={<Profile/>}/>
+          
         
         </Routes>
       </Router>
