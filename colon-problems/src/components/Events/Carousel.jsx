@@ -6,6 +6,7 @@ import {
   Stack,
   Heading,
   Text,
+  useColorModeValue,
   Container,
 } from '@chakra-ui/react';
 // Here we have used react-icons package for the icons
@@ -130,10 +131,10 @@ export default function Carousel() {
                 position="absolute"
                 top="50%"
                 transform="translate(0, -50%)">
-                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}>
+                <Heading fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }} color={useColorModeValue('white')}>
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: 'md', lg: 'lg' }} color="WhiteTexT">
+                <Text fontSize={{ base: 'md', lg: 'lg' }} color={useColorModeValue('white')}>
                   {card.text}
                 </Text>
               </Stack>
