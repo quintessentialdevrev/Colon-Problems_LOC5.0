@@ -14,7 +14,7 @@ import Model from '../model';
 import PostWithLike from './components/Courses';
 import Profile from './components/Profile/profile';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Chat from './components/chat/Chat'
 
 function App() {
   return (
@@ -33,6 +33,7 @@ function App() {
           <Route path="/playground" element={<Model />}/>
           <Route path="/courses" element={<PostWithLike/>}/>
           <Route path='/profile' element={<Profile/>}/>
+          <Route path='/chat' element={<Chat/>}/>
           
         
         </Routes>
