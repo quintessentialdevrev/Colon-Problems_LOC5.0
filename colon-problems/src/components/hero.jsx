@@ -44,6 +44,7 @@ export default function Hero() {
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
             <Button
+              href={'./stockimages'}
               rounded={'full'}
               bg={'purple.400'}
               color={'white'}

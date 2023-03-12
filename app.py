@@ -62,5 +62,25 @@ def predict():
     return jsonify(return_list)
     #return json.dumps(return_list)
 
+@app.route('/predictSimilarity',methods=['POST'])
+#@crossdomain(origin='*')
+def predict():
+    print('hello')
+    try:
+        request_data = request.get_json()
+        print(request_data)
+    except Exception as er:
+        print("error")
+        print(er)
+    print("data: ", request_data)
+    
+    
+
+    print("jsonify")
+    #print(jsonify(return_list))
+
+    return jsonify(return_list)
+    #return json.dumps(return_list)
+
 if __name__ == "__main__":
     app.run(debug = True)

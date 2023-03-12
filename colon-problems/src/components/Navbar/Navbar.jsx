@@ -248,22 +248,28 @@ import {
   
   const NAV_ITEMS = [
     {
+      label: 'Home',
+      href: './home',
+    },
+    {
       label: 'Events',
-      children: [
-        {
-          label: 'Explore Design Work',
-          subLabel: 'Trending Design to inspire you',
-          href: '#',
-        },
-        {
-          label: 'New & Noteworthy',
-          subLabel: 'Up-and-coming Designers',
-          href: '#',
-        },
-      ],
+      href:'/Events'
+      // children: [
+      //   {
+      //     label: 'Explore Design Work',
+      //     subLabel: 'Trending Design to inspire you',
+      //     href: '#',
+      //   },
+      //   {
+      //     label: 'New & Noteworthy',
+      //     subLabel: 'Up-and-coming Designers',
+      //     href: '#',
+      //   },
+      // ],
     },
     {
       label: 'Courses',
+      href:'./Courses',
       // children: [
       //   {
       //     label: 'Job Board',
@@ -279,10 +285,11 @@ import {
     },
     {
       label: 'Search',
-      href: '#',
+      href: './stockimages',
     },
     {
-      label: 'Hire Designers',
-      href: '#',
+      label: 'Hire Photographers',
+      href: './predict',
     },
+   
   ];

@@ -5,9 +5,14 @@ import p1 from './p1.jpg'
 import p2 from './p2.jpg'
 import p3 from './p3.jpg'
 import p4 from './p4.jpeg'
+// import { Navbar } from 'react-bootstrap';
+import Navbar from '../Navbar/Navbar'
+import Footer from '../Footer'
+
 export default function Profile(){
     return(
         <>
+        <Navbar/>
         <Card className='c3'
   direction={{ base: 'column', sm: 'row' }}
   overflow='hidden'
@@ -131,6 +136,7 @@ Cheers!
     </CardFooter>
   </Stack>
 </Card>
+<Footer/>
 </>
     ) 
     
