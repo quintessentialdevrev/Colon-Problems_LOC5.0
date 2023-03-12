@@ -12,6 +12,7 @@ import Predict from './components/predict';
 import Events from './components/Events/Events';
 import Model from '../model';
 import Courses from './components/Courses';
+import Profile from './components/Profile/profile';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/Events" element={<Events/>}/>
           <Route path="/playground" element={<Model />}/>
           <Route path="/Courses" element={<Courses/>}/>
+          <Route path='/profile' element={<Profile/>}/>
         
         </Routes>
       </Router>

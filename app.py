@@ -9,7 +9,7 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-model = pickle.load(open('C:/complete web development/Colon-Problems_LOC5.0/backend/model/model.pkl', 'rb'))
+model = pickle.load(open('backend\model1.pkl', 'rb'))
 df = pd.read_excel('backend\photography.xlsx')
 # app.config['CORS_HEADERS'] = 'Content-Type'
 
@@ -28,13 +28,14 @@ def predict():
         print("error")
         print(er)
     print("data: ", request_data)
-    close_match =  difflib.get_close_matches(request_data['quote'], df['Description'].tolist())
+    close_match =  difflib.get_close_matches(request_data['quote'], df['Genre'].tolist())
     # print(close_match)
     close = close_match[0]
     print(close)
-    id_of_quote = df[df['Description'] == close]['Description'].values[0]
-    similarity_score = list(enumerate(model[id_of_quote]))
-    # print(similarity_score)
+    id_of_quote = df[df['Genre'] == close]['index'].values[0]
+    print(id_of_quote)
+    similarity_score = list(enumerate(model[id_of_quote])) 
+    print("hello")
     sorted_sim_quote = sorted(similarity_score, key=lambda x: x[1], reverse=True)
     return_list = []
     i = 1
@@ -55,6 +56,26 @@ def predict():
         # except:
         #     pass
     print(return_list)
+    print("jsonify")
+    #print(jsonify(return_list))
+
+    return jsonify(return_list)
+    #return json.dumps(return_list)
+
+@app.route('/predictSimilarity',methods=['POST'])
+#@crossdomain(origin='*')
+def predict():
+    print('hello')
+    try:
+        request_data = request.get_json()
+        print(request_data)
+    except Exception as er:
+        print("error")
+        print(er)
+    print("data: ", request_data)
+    
+    
+
     print("jsonify")
     #print(jsonify(return_list))
 
