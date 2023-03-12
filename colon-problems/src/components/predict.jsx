@@ -57,7 +57,7 @@ export default function Predict() {
         <>
         {/* <img src={PredictImg} style={{width:1600,}} alt="prediction"></img> */}
         <body className="bg-dark" style={sectionStyle}>
-        <Container className="d-flex align-items-center justify-content-center" >
+        <Container className="d-flex align-items-center justify-content-center">
         <div className='w-100' style={{maxWidth: '400px'}}>
         <Card className="bg-light">
             <Card.Body>
